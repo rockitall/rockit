@@ -1,0 +1,57 @@
+apply from: "lib.gradle"
+
+buildscript {
+    repositories {
+        maven { url maven_url }
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        maven { url maven_url }
+    }
+}
+
+project(":rockit-commons") {
+    dependencies {
+        compile libs.jackson_databind
+        compile libs.logback
+        compile libs.common_lang3
+        compile libs.shiro_core
+        compile libs.common_fileupload
+        compile libs.common_codec
+        compile libs.validator
+
+        testCompile libs.powermock_api
+        testCompile libs.powermock_junit4
+    }
+}
+
+project(":rockit-http") {
+    dependencies {
+        compile libs.httpclient
+        compile libs.jackson_databind
+        compile libs.logback
+        compile libs.common_lang3
+
+        testCompile libs.powermock_api
+        testCompile libs.powermock_junit4
+    }
+}
+
+
+project(":rockit-qcloud") {
+    dependencies {
+        compile project(":rockit-commons")
+        compile project(":rockit-http")
+
+        testCompile libs.powermock_api
+        testCompile libs.powermock_junit4
+    }
+}

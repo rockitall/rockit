@@ -1,0 +1,5 @@
+rootProject.name = 'rockit-all'
+include "rockit-commons"
+include "rockit-http"
+include "rockit-qcloud"
+
