@@ -1,4 +1,4 @@
-package com.rockit.qcloud.im.common;
+package com.rockit.core.qcloud.im.common;
 
 
 import com.rockit.core.utils.JacksonUtil;

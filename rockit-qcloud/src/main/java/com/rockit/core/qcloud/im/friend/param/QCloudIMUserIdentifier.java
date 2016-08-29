@@ -1,4 +1,4 @@
-package com.rockit.qcloud.im.friend.param;
+package com.rockit.core.qcloud.im.friend.param;
 
 /**
  * Created by Allen on 2016/8/14.

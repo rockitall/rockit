@@ -1,4 +1,4 @@
-package com.rockit.core.constants;
+package com.rockit.core;
 
 /**
  * Created by Allen on 2016/8/1.

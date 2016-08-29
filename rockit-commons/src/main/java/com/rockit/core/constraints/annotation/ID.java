@@ -1,5 +1,6 @@
 package com.rockit.core.constraints.annotation;
 
+import com.rockit.core.constraints.validator.IDValidator;
 import com.rockit.core.constraints.validator.MobileValidator;
 
 import javax.validation.Constraint;
@@ -18,21 +19,20 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
 @Retention(RUNTIME)
 @Documented
-@Constraint(validatedBy = {MobileValidator.class})
-public @interface Mobile {
+@Constraint(validatedBy = {IDValidator.class})
+public @interface ID {
     String message() default "手机号码不正确";
 
-    String regexp() default "^1[3|4|5|7|8]\\d{9}$";
+    String regexp() default "^[0-9a-zA-Z]+[0-9a-zA-Z\\.\\@\\-\\_]*[0-9a-zA-Z]+$";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
 
-
     @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
     @Retention(RUNTIME)
     @Documented
     @interface List {
-        Mobile[] value();
+        ID[] value();
     }
 }

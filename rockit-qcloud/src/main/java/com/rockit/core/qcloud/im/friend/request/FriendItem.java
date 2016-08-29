@@ -1,4 +1,4 @@
-package com.rockit.qcloud.im.friend.request;
+package com.rockit.core.qcloud.im.friend.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

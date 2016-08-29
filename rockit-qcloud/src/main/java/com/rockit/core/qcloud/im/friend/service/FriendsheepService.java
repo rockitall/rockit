@@ -1,14 +1,14 @@
-package com.rockit.qcloud.im.friend.service;
+package com.rockit.core.qcloud.im.friend.service;
 
-import com.rockit.qcloud.im.common.QCloudApiRequest;
-import com.rockit.qcloud.im.common.QCloudHttp;
-import com.rockit.qcloud.im.common.QCloudProperties;
-import com.rockit.qcloud.im.friend.param.QCloudIMUserIdentifier;
-import com.rockit.qcloud.im.friend.request.FriendItem;
-import com.rockit.qcloud.im.friend.request.AddFriendRequestBody;
-import com.rockit.qcloud.im.friend.response.AddFriendResponse;
-import com.rockit.qcloud.im.friend.response.CheckFriendResponse;
-import com.rockit.qcloud.im.friend.response.DeleteFriendResponse;
+import com.rockit.core.qcloud.im.common.QCloudApiRequest;
+import com.rockit.core.qcloud.im.common.QCloudHttp;
+import com.rockit.core.qcloud.im.common.QCloudProperties;
+import com.rockit.core.qcloud.im.friend.param.QCloudIMUserIdentifier;
+import com.rockit.core.qcloud.im.friend.request.FriendItem;
+import com.rockit.core.qcloud.im.friend.request.AddFriendRequestBody;
+import com.rockit.core.qcloud.im.friend.response.AddFriendResponse;
+import com.rockit.core.qcloud.im.friend.response.CheckFriendResponse;
+import com.rockit.core.qcloud.im.friend.response.DeleteFriendResponse;
 
 import java.util.List;
 

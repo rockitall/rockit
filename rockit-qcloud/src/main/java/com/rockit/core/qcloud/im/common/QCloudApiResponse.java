@@ -1,4 +1,4 @@
-package com.rockit.qcloud.im.common;
+package com.rockit.core.qcloud.im.common;
 
 /**
  * Created by Allen on 2016/8/13.

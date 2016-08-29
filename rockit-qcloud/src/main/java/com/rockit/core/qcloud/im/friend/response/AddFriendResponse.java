@@ -1,7 +1,7 @@
-package com.rockit.qcloud.im.friend.response;
+package com.rockit.core.qcloud.im.friend.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.rockit.qcloud.im.common.QCloudApiResponse;
+import com.rockit.core.qcloud.im.common.QCloudApiResponse;
 
 import java.util.List;
 

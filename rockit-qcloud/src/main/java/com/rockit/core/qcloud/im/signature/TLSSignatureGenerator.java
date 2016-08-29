@@ -1,10 +1,11 @@
-package com.rockit.qcloud.im.signature;
+package com.rockit.core.qcloud.im.signature;
 
 import com.rockit.core.exception.UserSignatureException;
-import com.rockit.qcloud.im.common.QCloudProperties;
+import com.rockit.core.qcloud.im.common.QCloudProperties;
 import com.tls.sigcheck.tls_sigcheck;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,6 +84,10 @@ public class TLSSignatureGenerator {
         }
     }
 
+    public String getIdentifier(Long userId) {
+        return new Md5Hash(userId.toString(), String.valueOf(userId.hashCode())).toHex();
+    }
+
     public String getUserSignature(String identifier) throws UserSignatureException {
         if (StringUtils.isBlank(identifier)) {
             throw new UserSignatureException("identifier is blank");
@@ -120,5 +125,4 @@ public class TLSSignatureGenerator {
     public void setUserSignatureProperties(QCloudProperties userSignatureProperties) {
         this.userSignatureProperties = userSignatureProperties;
     }
-
 }
