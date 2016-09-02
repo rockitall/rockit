@@ -19,4 +19,6 @@ public interface ErrorCode {
     int USER_ALREADY_EXISTS = 20010;
     int UNAUTHORIZED = 20020;
     int USER_NOT_EXISTS = 20030;
+
+    int FILE_UPLOAD_ERROR = 70010;
 }
