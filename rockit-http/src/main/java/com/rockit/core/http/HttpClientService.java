@@ -103,7 +103,19 @@ public class HttpClientService {
     }
 
     private String buildUrl(String url, SortedMap<String, String> params) {
-        return null;
+        if (params == null || params.isEmpty()) {
+            return url;
+        }
+        StringBuilder buf = new StringBuilder(url.length() + params.size() * 16);
+        buf.append(url);
+        buf.append('?');
+        params.entrySet().stream().forEach(entry -> {
+            if (StringUtils.isNoneBlank(entry.getKey(), entry.getValue())) {
+                buf.append(entry.getKey()).append('=').append(entry.getValue()).append('&');
+            }
+        });
+        buf.deleteCharAt(buf.length() - 1);
+        return buf.toString();
     }
 
     private static RequestConfig getRequestConfig(HttpRequest request, HttpClientProperties httpClientProperties) {
